@@ -1,0 +1,14 @@
+.author-link{
+    color: #2980b9;
+    text-decoration: none;
+}
+.author-link:hover{
+    color: #2980b9;
+}
+
+.post-content{
+    border-bottom: 2px solid #2980b9;
+    border-radius: 5px;
+}
+
+
