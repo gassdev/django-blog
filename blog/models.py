@@ -7,7 +7,8 @@ class PostQuerySet(models.QuerySet):
 
     def delete(self, *args, **kwargs):
         for obj in self:
-            obj.img.delete()
+            if obj.img.name.split('/')[-1] != 'default.jpg':
+                obj.img.delete()
         super(PostQuerySet, self).delete(*args, **kwargs)
 
 class Post(models.Model):
@@ -25,3 +26,11 @@ class Post(models.Model):
         if self.img.name.split('/')[-1] != 'default.jpg':
             self.img.delete()
         super().delete(*args, **kwargs)  # Call the "real" save() method.
+
+    def save(self, *args, **kwargs):
+        try:
+            this = Post.objects.get(id=self.id)
+            if (this.img != self.img) and (this.img.name.split('/')[-1] != 'default.jpg'):
+                this.img.delete(save=False)
+        except: pass
+        super().save(*args, **kwargs)
