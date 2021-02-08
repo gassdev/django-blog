@@ -33,8 +33,13 @@
           </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <li class="nav-item"><a href="" class="nav-link">Connexion</a></li>
-          <li class="nav-item"><a href="" class="nav-link">Inscription</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link">Profil</a></li>
+          <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Déconnexion</a></li>
+          {% else %}
+          <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Connexion</a></li>
+          <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Inscription</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>

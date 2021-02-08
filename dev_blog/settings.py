@@ -140,3 +140,6 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'

@@ -5,18 +5,18 @@
        <form action="" method="post">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Bienvenue</legend>
+                <legend class="border-bottom mb-4">Connexion</legend>
                 {{form | crispy}}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-secondary">
-                    S'inscrire
+                    Se Connecter
                 </button>
             </div>
        </form>
        <div class="border-top pt-3">
             <small class="text-muted">
-                Avez vous un Compte? <a class="a-link ml-2" href="% url 'login' %">Connexion</a>
+                Pas encore Inscrit? <a class="a-link ml-2" href="{% url 'register' %}">Inscrivez-vous maintenant</a>
             </small>
        </div>
     </div>
