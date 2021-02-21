@@ -3,7 +3,7 @@
 {% for post in posts %}
         <div class="row mb-5">
             <div class="col-md-3">
-                <img src="{{post.img.url}}" class="img-fluid" alt="">
+                <img src="{{post.author.profile.image.url}}" class="rounded-circle account-img" alt="">
             </div>
             <div class="col post-content">
                 <p>Par <a class="author-link" href="">{{post.author}}</a> le <small class="text-muted">{{post.date_posted | date:"d M Y"}}</small></p>
