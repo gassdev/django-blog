@@ -1,21 +1,31 @@
-.author-link{
+.author-link {
     color: #2980b9;
     text-decoration: none;
 }
-.author-link:hover{
+
+.author-link:hover {
     color: #2980b9;
 }
 
-.post-content{
+.post-content {
     border-bottom: 2px solid #2980b9;
     border-radius: 5px;
 }
 
-.a-link{
+.a-link {
     text-decoration: none;
 }
 
-.account-img{
+.account-img {
     width: 150px;
     height: 150px;
+}
+
+.post-title {
+    text-decoration: none;
+    color: #333;
+}
+
+.post-title:hover {
+    color: #2980b9;
 }

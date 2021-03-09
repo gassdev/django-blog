@@ -1,16 +1,18 @@
 {% extends "blog/base.html" %}
 {% block content %}
 {% for post in posts %}
-        <div class="row mb-5">
-            <div class="col-md-3">
-                <img src="{{post.author.profile.image.url}}" class="rounded-circle account-img" alt="">
-            </div>
-            <div class="col post-content">
-                <p>Par <a class="author-link" href="">{{post.author}}</a> le <small class="text-muted">{{post.date_posted | date:"d M Y"}}</small></p>
-                <h3 class="card-title">{{post.title}}</h3>
-                <p>{{post.content}}</p>
-            </div>
-        </div>
+<div class="row mb-5">
+    <div class="col-md-3">
+        <img src="{{post.author.profile.image.url}}" class="rounded-circle account-img" alt="">
+    </div>
+    <div class="col post-content">
+        <p>Par <a class="author-link" href="">{{post.author}}</a> le <small
+                class="text-muted">{{post.date_posted | date:"d M Y"}}</small></p>
+        <a href="{% url 'post-detail' post.id  %}" class="post-title">
+            <h3 class="card-title">{{post.title}}</h3>
+        </a>
+        <p>{{post.content}}</p>
+    </div>
+</div>
 {% endfor %}
 {% endblock content %}
-
