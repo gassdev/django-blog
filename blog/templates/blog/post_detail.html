@@ -6,8 +6,8 @@
         <img src="{{object.author.profile.image.url}}" class="rounded-circle account-img" alt="">
     </div>
     <div class="col post-content">
-        <p>Par <a class="author-link" href="">{{object.author}}</a> le <small
-                class="text-muted">{{object.date_posted | date:"d M Y"}}</small>
+        <p>Par <a class="author-link" href="{% url 'user-posts' object.author.username %}">{{object.author}}</a> le
+            <small class="text-muted">{{object.date_posted | date:"d M Y"}}</small>
             {% if object.author == user %}
             <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Modifier</a>
