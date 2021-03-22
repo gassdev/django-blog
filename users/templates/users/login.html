@@ -8,14 +8,15 @@
     </fieldset>
     <div class="form-group">
       <button class="btn btn-outline-secondary">Se Connecter</button>
+      <small class="text-muted ml-2">
+        <a href="{% url 'password_reset' %}">Mot de Passe oublié?</a>
+      </small>
     </div>
   </form>
   <div class="border-top pt-3">
     <small class="text-muted">
       Pas encore Inscrit?
-      <a class="a-link ml-2" href="{% url 'register' %}"
-        >Inscrivez-vous maintenant</a
-      >
+      <a class="a-link ml-2" href="{% url 'register' %}">Inscrivez-vous maintenant</a>
     </small>
   </div>
 </div>
